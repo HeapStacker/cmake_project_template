@@ -73,32 +73,117 @@ CMAKE_BINARY_DIR = /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build
 
 # The main recursive "all" target.
 all: CMakeFiles/tutorial.dir/all
+all: glfw/all
+all: glew-cmake/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: glfw/preinstall
+preinstall: glew-cmake/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/tutorial.dir/clean
+clean: glfw/clean
+clean: glew-cmake/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory glew-cmake
+
+# Recursive "all" directory target.
+glew-cmake/all: glew-cmake/CMakeFiles/libglew_shared.dir/all
+glew-cmake/all: glew-cmake/CMakeFiles/libglew_static.dir/all
+
+.PHONY : glew-cmake/all
+
+# Recursive "preinstall" directory target.
+glew-cmake/preinstall:
+
+.PHONY : glew-cmake/preinstall
+
+# Recursive "clean" directory target.
+glew-cmake/clean: glew-cmake/CMakeFiles/libglew_shared.dir/clean
+glew-cmake/clean: glew-cmake/CMakeFiles/libglew_static.dir/clean
+
+.PHONY : glew-cmake/clean
+
+#=============================================================================
+# Directory level rules for directory glfw
+
+# Recursive "all" directory target.
+glfw/all: glfw/src/all
+glfw/all: glfw/docs/all
+
+.PHONY : glfw/all
+
+# Recursive "preinstall" directory target.
+glfw/preinstall: glfw/src/preinstall
+glfw/preinstall: glfw/docs/preinstall
+
+.PHONY : glfw/preinstall
+
+# Recursive "clean" directory target.
+glfw/clean: glfw/CMakeFiles/uninstall.dir/clean
+glfw/clean: glfw/src/clean
+glfw/clean: glfw/docs/clean
+
+.PHONY : glfw/clean
+
+#=============================================================================
+# Directory level rules for directory glfw/docs
+
+# Recursive "all" directory target.
+glfw/docs/all: glfw/docs/CMakeFiles/docs.dir/all
+
+.PHONY : glfw/docs/all
+
+# Recursive "preinstall" directory target.
+glfw/docs/preinstall:
+
+.PHONY : glfw/docs/preinstall
+
+# Recursive "clean" directory target.
+glfw/docs/clean: glfw/docs/CMakeFiles/docs.dir/clean
+
+.PHONY : glfw/docs/clean
+
+#=============================================================================
+# Directory level rules for directory glfw/src
+
+# Recursive "all" directory target.
+glfw/src/all: glfw/src/CMakeFiles/glfw.dir/all
+
+.PHONY : glfw/src/all
+
+# Recursive "preinstall" directory target.
+glfw/src/preinstall:
+
+.PHONY : glfw/src/preinstall
+
+# Recursive "clean" directory target.
+glfw/src/clean: glfw/src/CMakeFiles/update_mappings.dir/clean
+glfw/src/clean: glfw/src/CMakeFiles/glfw.dir/clean
+
+.PHONY : glfw/src/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/tutorial.dir
 
 # All Build rule for target.
-CMakeFiles/tutorial.dir/all:
+CMakeFiles/tutorial.dir/all: glfw/src/CMakeFiles/glfw.dir/all
+CMakeFiles/tutorial.dir/all: glew-cmake/CMakeFiles/libglew_static.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tutorial.dir/build.make CMakeFiles/tutorial.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tutorial.dir/build.make CMakeFiles/tutorial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=1,2 "Built target tutorial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=29,30,31 "Built target tutorial"
 .PHONY : CMakeFiles/tutorial.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tutorial.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tutorial.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
 .PHONY : CMakeFiles/tutorial.dir/rule
@@ -112,6 +197,168 @@ tutorial: CMakeFiles/tutorial.dir/rule
 CMakeFiles/tutorial.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tutorial.dir/build.make CMakeFiles/tutorial.dir/clean
 .PHONY : CMakeFiles/tutorial.dir/clean
+
+#=============================================================================
+# Target rules for target glfw/CMakeFiles/uninstall.dir
+
+# All Build rule for target.
+glfw/CMakeFiles/uninstall.dir/all:
+	$(MAKE) $(MAKESILENT) -f glfw/CMakeFiles/uninstall.dir/build.make glfw/CMakeFiles/uninstall.dir/depend
+	$(MAKE) $(MAKESILENT) -f glfw/CMakeFiles/uninstall.dir/build.make glfw/CMakeFiles/uninstall.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num= "Built target uninstall"
+.PHONY : glfw/CMakeFiles/uninstall.dir/all
+
+# Build rule for subdir invocation for target.
+glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw/CMakeFiles/uninstall.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glfw/CMakeFiles/uninstall.dir/rule
+
+# Convenience name for target.
+uninstall: glfw/CMakeFiles/uninstall.dir/rule
+
+.PHONY : uninstall
+
+# clean rule for target.
+glfw/CMakeFiles/uninstall.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glfw/CMakeFiles/uninstall.dir/build.make glfw/CMakeFiles/uninstall.dir/clean
+.PHONY : glfw/CMakeFiles/uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target glfw/src/CMakeFiles/update_mappings.dir
+
+# All Build rule for target.
+glfw/src/CMakeFiles/update_mappings.dir/all:
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/update_mappings.dir/build.make glfw/src/CMakeFiles/update_mappings.dir/depend
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/update_mappings.dir/build.make glfw/src/CMakeFiles/update_mappings.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=32 "Built target update_mappings"
+.PHONY : glfw/src/CMakeFiles/update_mappings.dir/all
+
+# Build rule for subdir invocation for target.
+glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw/src/CMakeFiles/update_mappings.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glfw/src/CMakeFiles/update_mappings.dir/rule
+
+# Convenience name for target.
+update_mappings: glfw/src/CMakeFiles/update_mappings.dir/rule
+
+.PHONY : update_mappings
+
+# clean rule for target.
+glfw/src/CMakeFiles/update_mappings.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/update_mappings.dir/build.make glfw/src/CMakeFiles/update_mappings.dir/clean
+.PHONY : glfw/src/CMakeFiles/update_mappings.dir/clean
+
+#=============================================================================
+# Target rules for target glfw/src/CMakeFiles/glfw.dir
+
+# All Build rule for target.
+glfw/src/CMakeFiles/glfw.dir/all:
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/depend
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 "Built target glfw"
+.PHONY : glfw/src/CMakeFiles/glfw.dir/all
+
+# Build rule for subdir invocation for target.
+glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 23
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw/src/CMakeFiles/glfw.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glfw/src/CMakeFiles/glfw.dir/rule
+
+# Convenience name for target.
+glfw: glfw/src/CMakeFiles/glfw.dir/rule
+
+.PHONY : glfw
+
+# clean rule for target.
+glfw/src/CMakeFiles/glfw.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/clean
+.PHONY : glfw/src/CMakeFiles/glfw.dir/clean
+
+#=============================================================================
+# Target rules for target glfw/docs/CMakeFiles/docs.dir
+
+# All Build rule for target.
+glfw/docs/CMakeFiles/docs.dir/all:
+	$(MAKE) $(MAKESILENT) -f glfw/docs/CMakeFiles/docs.dir/build.make glfw/docs/CMakeFiles/docs.dir/depend
+	$(MAKE) $(MAKESILENT) -f glfw/docs/CMakeFiles/docs.dir/build.make glfw/docs/CMakeFiles/docs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=1 "Built target docs"
+.PHONY : glfw/docs/CMakeFiles/docs.dir/all
+
+# Build rule for subdir invocation for target.
+glfw/docs/CMakeFiles/docs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glfw/docs/CMakeFiles/docs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glfw/docs/CMakeFiles/docs.dir/rule
+
+# Convenience name for target.
+docs: glfw/docs/CMakeFiles/docs.dir/rule
+
+.PHONY : docs
+
+# clean rule for target.
+glfw/docs/CMakeFiles/docs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glfw/docs/CMakeFiles/docs.dir/build.make glfw/docs/CMakeFiles/docs.dir/clean
+.PHONY : glfw/docs/CMakeFiles/docs.dir/clean
+
+#=============================================================================
+# Target rules for target glew-cmake/CMakeFiles/libglew_shared.dir
+
+# All Build rule for target.
+glew-cmake/CMakeFiles/libglew_shared.dir/all:
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_shared.dir/build.make glew-cmake/CMakeFiles/libglew_shared.dir/depend
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_shared.dir/build.make glew-cmake/CMakeFiles/libglew_shared.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=25,26 "Built target libglew_shared"
+.PHONY : glew-cmake/CMakeFiles/libglew_shared.dir/all
+
+# Build rule for subdir invocation for target.
+glew-cmake/CMakeFiles/libglew_shared.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glew-cmake/CMakeFiles/libglew_shared.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glew-cmake/CMakeFiles/libglew_shared.dir/rule
+
+# Convenience name for target.
+libglew_shared: glew-cmake/CMakeFiles/libglew_shared.dir/rule
+
+.PHONY : libglew_shared
+
+# clean rule for target.
+glew-cmake/CMakeFiles/libglew_shared.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_shared.dir/build.make glew-cmake/CMakeFiles/libglew_shared.dir/clean
+.PHONY : glew-cmake/CMakeFiles/libglew_shared.dir/clean
+
+#=============================================================================
+# Target rules for target glew-cmake/CMakeFiles/libglew_static.dir
+
+# All Build rule for target.
+glew-cmake/CMakeFiles/libglew_static.dir/all:
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_static.dir/build.make glew-cmake/CMakeFiles/libglew_static.dir/depend
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_static.dir/build.make glew-cmake/CMakeFiles/libglew_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles --progress-num=27,28 "Built target libglew_static"
+.PHONY : glew-cmake/CMakeFiles/libglew_static.dir/all
+
+# Build rule for subdir invocation for target.
+glew-cmake/CMakeFiles/libglew_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glew-cmake/CMakeFiles/libglew_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/build/CMakeFiles 0
+.PHONY : glew-cmake/CMakeFiles/libglew_static.dir/rule
+
+# Convenience name for target.
+libglew_static: glew-cmake/CMakeFiles/libglew_static.dir/rule
+
+.PHONY : libglew_static
+
+# clean rule for target.
+glew-cmake/CMakeFiles/libglew_static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f glew-cmake/CMakeFiles/libglew_static.dir/build.make glew-cmake/CMakeFiles/libglew_static.dir/clean
+.PHONY : glew-cmake/CMakeFiles/libglew_static.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

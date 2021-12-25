@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/glad.h
+KHR/khrplatform.h
+-
+
+/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/src/glad.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+glad.h
+/home/martin/Desktop/CmakeTuts/cmakeProjectTemplate/src/glad.h
+windows.h
+-
+winapifamily.h
+-
+dlfcn.h
+-
+
